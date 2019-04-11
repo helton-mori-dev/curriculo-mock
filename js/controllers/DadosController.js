@@ -6,11 +6,11 @@ botaoExperiencia.addEventListener("click", function() {
     document.querySelector('.tabela-cabecalho').style.display = 'block';
     var xhrExp = new XMLHttpRequest();
     // Colocar endereço arquivo Json experiencias
-    xhrExp.open("GET", "");
+    xhrExp.open("GET", experienciasJson);
     xhrExp.addEventListener("load", function() {
 
-        var dados = xhrExp.responseText;
-        var empresas = JSON.parse(dados);
+        var dadosE = xhrExp.responseText;
+        var empresas = JSON.parse(dadosE);
 
         empresas.forEach(function(empresa) {
             adicionaExperiencia(empresa);
@@ -32,8 +32,8 @@ botaoTecnologias.addEventListener("click", function() {
     document.querySelector('.tabela-tecnologia').style.display = 'block';
     var xhrHab = new XMLHttpRequest();
     
-    // Colocar endereço arquivo Json experiencias
-    xhrHab.open("GET", "");
+    // Colocar endereço arquivo Json conhecimentos
+    xhrHab.open("GET", conhecimentosJson);
     xhrHab.addEventListener("load", function() {
 
         var dadosH = xhrHab.responseText;

@@ -1,3 +1,7 @@
+var conhecimentosJson = 'http://demo1573951.mockable.io/conhecimentos';
+var experienciasJson = 'http://demo1573951.mockable.io/experiencias';
+var dadosJson = 'http://demo1573951.mockable.io/dadospessoais';
+
 function montaTrExp(empresa) {
     var empresaTr = document.createElement("tr");
     empresaTr.appendChild(montaTd(empresa.empresa));
@@ -8,9 +12,9 @@ function montaTrExp(empresa) {
     return empresaTr;
 }
 
-function montaTd(dados) {
+function montaTd(dadosE) {
     var td = document.createElement("td");
-    td.textContent = dados;
+    td.textContent = dadosE;
     return td;
 }
 
@@ -28,3 +32,18 @@ function montaTd(dadosH) {
     td.textContent = dadosH;
     return td;
 }
+
+function montaDadosPessoais() {
+  var xhrPessoais = new XMLHttpRequest();
+  xhrPessoais.onload = function() {
+    if (this.status == 200) {
+    var dadosTemp = xhrPessoais.responseText; 
+    var dadosP = JSON.parse(dadosTemp);
+      console.log(dadosP);
+      var idade = 
+    }
+  };
+  xhrPessoais.open("GET", dadosJson, true);
+  xhrPessoais.send();
+}
+montaDadosPessoais();
