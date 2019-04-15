@@ -1,6 +1,6 @@
-const conhecimentosJson = 'http://demo1573951.mockable.io/conhecimentos';
-const experienciasJson = 'http://demo1573951.mockable.io/experiencias';
-const dadosJson = 'http://demo1573951.mockable.io/dadospessoais';
+const conhecimentosJson = 'https://demo1573951.mockable.io/conhecimentos';
+const experienciasJson = 'https://demo1573951.mockable.io/experiencias';
+const dadosJson = 'https://demo1573951.mockable.io/dadospessoais';
 
 function montaTrExp(empresa) {
     let empresaTr = document.createElement("tr");
