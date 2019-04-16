@@ -8,6 +8,10 @@ botaoExperiencia.addEventListener("click", function() {
     // Colocar endereço arquivo Json experiencias
     xhrExp.open("GET", experienciasJson);
     xhrExp.addEventListener("load", function() {
+        if (this.status == 200) {
+            document.getElementById("botao-experiencia").disabled = true;
+            document.getElementById("botao-experiencia").style.opacity = 0.3;
+        }
 
         var dadosE = xhrExp.responseText;
         var empresas = JSON.parse(dadosE);
@@ -35,6 +39,10 @@ botaoTecnologias.addEventListener("click", function() {
     // Colocar endereço arquivo Json conhecimentos
     xhrHab.open("GET", conhecimentosJson);
     xhrHab.addEventListener("load", function() {
+        if(this.status == 200) {
+            document.querySelector('#botao-tecnologia').disabled = true;
+            document.querySelector('#botao-tecnologia').style.opacity = 0.3;
+        }
 
         var dadosH = xhrHab.responseText;
         var habilidades = JSON.parse(dadosH);
