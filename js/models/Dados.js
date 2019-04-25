@@ -97,4 +97,15 @@ function montaDadosPessoais() {
   xhrPessoais.open("GET", dadosJson, true);
   xhrPessoais.send();
 }
+
+function anoAtual () {
+    let rodape = document.querySelector('.rodape');
+	let dataAtual = new Date();
+	let anoAtual = dataAtual.getFullYear();    
+    rodape.innerHTML = `
+        <span>${anoAtual}</span>
+    `;
+}
+// Organizar um construtor
+anoAtual();
 montaDadosPessoais();
